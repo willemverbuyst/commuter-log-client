@@ -24,7 +24,7 @@
       getAllWorkingDaysData(logData);
 
     const canvas = document.getElementById('allWorkingDaysChart');
-    ctx = canvas.getContext('2d');
+    ctx = (canvas as HTMLCanvasElement).getContext('2d');
 
     const gradientFill = ctx.createLinearGradient(0, 100, 0, 250);
     gradientFill.addColorStop(0, colorTravelTimeExtra);

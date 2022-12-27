@@ -19,7 +19,7 @@
     const { partition, labels, title } = getPartitionData(logData);
 
     const canvas = document.getElementById('partitionChart');
-    ctx = canvas.getContext('2d');
+    ctx = (canvas as HTMLCanvasElement).getContext('2d');
 
     if (partitionChart) partitionChart.destroy();
 

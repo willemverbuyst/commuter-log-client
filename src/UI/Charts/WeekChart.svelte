@@ -18,7 +18,7 @@
       getWeekData(logData, weekIndexInLogData);
 
     const canvas = document.getElementById('weekChart');
-    ctx = canvas.getContext('2d');
+    ctx = (canvas as HTMLCanvasElement).getContext('2d');
 
     if (weekChart) weekChart.destroy();
 

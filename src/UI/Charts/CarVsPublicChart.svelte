@@ -21,7 +21,7 @@
       getCarVsPublicTotalsData(logData);
 
     const canvas = document.getElementById('carVsPublicChart');
-    ctx = canvas.getContext('2d');
+    ctx = (canvas as HTMLCanvasElement).getContext('2d');
 
     if (carVsPublicChart) carVsPublicChart.destroy();
 

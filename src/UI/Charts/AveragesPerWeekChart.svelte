@@ -23,7 +23,7 @@
       getAveragePerWeekData(logData);
 
     const canvas = document.getElementById('averagesPerWeekChart');
-    ctx = canvas.getContext('2d');
+    ctx = (canvas as HTMLCanvasElement).getContext('2d');
 
     const gradientStroke = ctx.createLinearGradient(0, 100, 0, 250);
     gradientStroke.addColorStop(0, colorTravelTimeExtra);

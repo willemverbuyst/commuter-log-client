@@ -21,7 +21,7 @@
     );
 
     const canvas = document.getElementById('gaugeChart');
-    ctx = canvas.getContext('2d');
+    ctx = (canvas as HTMLCanvasElement).getContext('2d');
 
     if (gaugeChart) gaugeChart.destroy();
 
