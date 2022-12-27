@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import DatePicker from '../UI/Inputs/DatePicker.svelte';
   import FormButton from '../UI/Buttons/FormButton.svelte';

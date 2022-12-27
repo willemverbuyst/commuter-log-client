@@ -1,4 +1,4 @@
-<script>
+<script lang ts>
   import { afterUpdate } from 'svelte';
   import 'chartjs-plugin-datalabels';
   import { formatDuration } from '../../helpers/formatting';
@@ -31,6 +31,7 @@
     } = getTotalsPerWeekData(logData);
 
     const canvas = document.getElementById('totalsPerWeekChart');
+
     ctx = canvas.getContext('2d');
 
     const gradientFillCar = ctx.createLinearGradient(0, 0, 0, 250);

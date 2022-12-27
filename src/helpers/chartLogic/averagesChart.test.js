@@ -5,7 +5,7 @@ import {
   testLogDateArrayTwoWeeks,
 } from '../../TestData/dummyData';
 import { getWeekNumber } from '../dateLogic';
-import { reduceDates } from '../utils';
+import { reduceDates } from '../utils.ts';
 
 describe('if getAveragePerWeekData is given an array of logDates', () => {
   const testAverages = [

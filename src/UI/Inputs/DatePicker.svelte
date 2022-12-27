@@ -1,5 +1,5 @@
-<script>
-  import Datepicker from 'svelte-calendar';
+<script lang="ts">
+  // import Datepicker from 'svelte-calendar';
 
   export let selectedDate;
   export let updateSelectedDate;
@@ -10,7 +10,7 @@
 </script>
 
 <div class="container" on:click={updateSelectedDate(selectedDate)}>
-  <Datepicker
+  <!-- <Datepicker
     {format}
     start={minDate}
     end={maxDate}
@@ -22,7 +22,7 @@
     dayTextColor="var(--main-bg-color-dark)"
     dayHighlightedBackgroundColor="var(--main-bg-color-dark)"
     dayHighlightedTextColor="var(--main-txt-color)"
-  />
+  /> -->
 </div>
 
 <style>

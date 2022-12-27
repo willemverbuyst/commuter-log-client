@@ -1,4 +1,4 @@
-import { groupByWeekNumber, reduceDates } from '../utils';
+import { groupByWeekNumber, reduceDates } from '../utils.ts';
 import { getWeekNumber } from '../dateLogic';
 import {
   colorTravelByCar,

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import TableButton from '../Buttons/TableButton.svelte';
   import TableDropdown from '../Inputs/TableDropdown.svelte';
   import {

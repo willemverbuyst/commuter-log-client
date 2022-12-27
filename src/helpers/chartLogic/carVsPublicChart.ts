@@ -1,4 +1,4 @@
-import { reduceDates } from '../utils';
+import { reduceDates } from '../utils.ts';
 
 // DOUGHNUT CHART, car vs public chart
 // Display total travel times public transport vs total travel times car

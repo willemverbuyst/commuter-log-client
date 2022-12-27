@@ -1,5 +1,5 @@
 import { getMinutes } from './chartLogic';
-import { groupByWeekNumber, reduceDates } from '../utils';
+import { groupByWeekNumber, reduceDates } from '../utils.ts';
 
 // Travel time per week which is considered acceptable according employer
 export const normWorkTravel = 5 * 2 * 75; //750

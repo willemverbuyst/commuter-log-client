@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import { formatDuration } from '../../helpers/formatting';
   import { getDay, getYear } from '../../helpers/dateLogic';

@@ -1,5 +1,5 @@
 import type { LogDate } from '../models/Logdata';
-import { getUniqueValues, reduceDates } from './utils';
+import { getUniqueValues, reduceDates } from './utils.ts';
 import {
   testLogDateOneA,
   testLogDateOneB,

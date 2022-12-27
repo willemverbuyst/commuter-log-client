@@ -1,5 +1,5 @@
 import { StatusOfDay } from '../../constants';
-import { reduceDates } from '../utils';
+import { reduceDates } from '../utils.ts';
 
 export const getAllWorkingDaysData = (logData) => {
   const reducedDates = reduceDates(logData);

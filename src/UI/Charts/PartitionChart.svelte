@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { afterUpdate } from 'svelte';
   import 'chartjs-plugin-datalabels';
   import { getPartitionData } from '../../helpers/chartLogic/partitionChart';

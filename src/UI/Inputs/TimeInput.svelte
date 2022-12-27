@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   export let value;
   export let valid = true;
   export let validityMessage;

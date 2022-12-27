@@ -1,4 +1,4 @@
-import { reduceDates } from '../utils';
+import { reduceDates } from '../utils.ts';
 
 // POLAR CHART, days car, public transport, working from home
 export const getPartitionData = (logData) => {

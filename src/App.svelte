@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import FormComponent from './Business/FormComponent.svelte';
   import LogInForm from './Business/LogInForm.svelte';
   import Button from './UI/Buttons/Button.svelte';

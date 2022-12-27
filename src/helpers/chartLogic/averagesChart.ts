@@ -12,13 +12,6 @@ export const getAveragePerWeekData = (logData) => {
   const maxForDisplay = Math.max(...averages) * 1.2;
   const title = `AVERAGE TRAVEL TIMES PER WEEK`;
 
-  console.log('c', {
-    averages,
-    labels,
-    maxForDisplay,
-    title,
-  });
-
   return {
     averages,
     labels,
