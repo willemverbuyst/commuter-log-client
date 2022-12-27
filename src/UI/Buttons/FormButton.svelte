@@ -1,13 +1,7 @@
-<script>
-  export let type = 'button';
-  export let disabled = false;
-</script>
-
-<button {type} {disabled} on:click><slot /></button>
+<button type="button" disabled={false} on:click><slot /></button>
 
 <style>
   button {
-    font-family: 'Helvetica Neue';
     width: 100%;
     height: 3rem;
     font-size: 12px;

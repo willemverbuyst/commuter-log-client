@@ -59,7 +59,6 @@
 <style>
   .table__container {
     width: 1150px;
-    font-family: 'Helvetica Neue';
     font-size: 12px;
     line-height: 1.2;
     color: var(--main-txt-color);
