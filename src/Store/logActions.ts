@@ -7,7 +7,6 @@ function updateIsLoading() {
 }
 
 export const fetchLogData = async () => {
-  // try {
   fetch('http://localhost:4000/api/v1/logs')
     .then((response) => response.json())
     .then((data) => {

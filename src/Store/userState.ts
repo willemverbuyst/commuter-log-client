@@ -6,7 +6,7 @@ let isSignedIn = writable(false);
 export const userStore = {
   subscribe: user.subscribe,
 
-  setUser: (email) => {
+  setUser: (email: string) => {
     user.set(email);
   },
 };
