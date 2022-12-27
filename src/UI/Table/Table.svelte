@@ -23,7 +23,9 @@
   }
 </script>
 
-<div class="dashboard__container margin-bottom">
+<div
+  class="dashboard__container dashboard__container-element--full margin-bottom"
+>
   <div class="table__container">
     <table>
       <TableHeader {doUpdate} {filteredLogData} {logData} />
@@ -47,6 +49,7 @@
               >{formatDuration(logDate.durationTrip)}</td
             >
           {/if}
+
           <TableButton on:click={() => dispatch('edit', logDate.id)}
             >Edit</TableButton
           >
@@ -58,7 +61,6 @@
 
 <style>
   .table__container {
-    width: 1150px;
     font-size: 12px;
     line-height: 1.2;
     color: var(--main-txt-color);

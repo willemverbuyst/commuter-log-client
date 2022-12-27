@@ -116,6 +116,6 @@
   afterUpdate(createChart);
 </script>
 
-<div class="dashboard__container">
-  <canvas id="averagesPerWeekChart" width="1150" />
+<div class="dashboard__container dashboard__container-element--full">
+  <canvas id="averagesPerWeekChart" />
 </div>

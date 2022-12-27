@@ -25,7 +25,6 @@
   }
 
   select {
-    font-family: 'Helvetica Neue';
     width: 100%;
     font-size: 12px;
     line-height: 1.2;

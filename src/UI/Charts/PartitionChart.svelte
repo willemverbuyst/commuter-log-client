@@ -69,6 +69,6 @@
   afterUpdate(createChart);
 </script>
 
-<div class="dashboard__container">
-  <canvas id="partitionChart" width="500" />
+<div class="dashboard__container dashboard__container-element--half">
+  <canvas id="partitionChart" />
 </div>

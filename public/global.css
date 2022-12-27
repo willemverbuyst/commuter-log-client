@@ -42,3 +42,11 @@ body {
   box-shadow: inset 4px 4px 4px var(--main-bg-color-dark),
     inset -4px -4px 4px var(--main-bg-color-light);
 }
+
+.dashboard__container-element--full {
+  width: 80vw;
+}
+
+.dashboard__container-element--half {
+  width: 35vw;
+}

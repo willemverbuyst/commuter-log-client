@@ -142,25 +142,23 @@
 
 <style>
   main {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100vw;
     text-align: center;
-    margin: 1rem auto;
-    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .dashboard__section {
-    padding: 0;
-    margin: 0 auto;
     width: 80vw;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   .nav-container {
-    margin-bottom: 1rem;
+    margin: 1rem;
   }
 
   .slider-container {
