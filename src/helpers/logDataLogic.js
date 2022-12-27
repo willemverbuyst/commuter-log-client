@@ -1,5 +1,6 @@
 import { getUniqueValues, groupByWeekNumber, reduceDates } from './utils';
 import { getWeekNumber, getYear } from './dateLogic';
+import { StatusOfDayDisplay } from '../constants';
 
 export const getNumberOfWeeks = (logData) => {
   const reducedDates = reduceDates(logData);
@@ -12,7 +13,10 @@ export const getUniqueStatuses = (logData) => {
   const statuses = logData.map((date) => date.statusOfDay);
 
   const uniqueStatuses = statuses.filter(getUniqueValues);
-  const sortedUniqueStatus = [...uniqueStatuses].sort();
+  const sortedUniqueStatus = [...uniqueStatuses]
+    .map((status) => StatusOfDayDisplay[status])
+    .sort();
+
   return sortedUniqueStatus;
 };
 

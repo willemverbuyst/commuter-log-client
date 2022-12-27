@@ -1,5 +1,4 @@
 <script>
-  import { routes } from '../../constants';
   import TableButton from '../Buttons/TableButton.svelte';
   import TableDropdown from '../Inputs/TableDropdown.svelte';
   import {
@@ -13,21 +12,26 @@
   export let filteredLogData;
   export let doUpdate;
 
+  console.log('logData', logData);
+
+  let routes = [];
+  logData.forEach((log) => {
+    routes.push(log.startingPoint);
+    routes.push(log.destination);
+  });
+
+  console.log('routes', new Set(routes));
+
   let filters = {
     routesFrom: ['no sorting', ...routes],
-    routeFrom: 'no sorting',
+    startingPoint: 'no sorting',
     routesTo: ['no sorting', ...routes],
-    routeTo: 'no sorting',
+    destination: 'no sorting',
     sortDates: ['no sorting', 'ascending', 'descending'],
     sortDate: 'no sorting',
     sortTravelTimes: ['no sorting', 'ascending', 'descending'],
     sortTravelTime: 'no sorting',
-    statuses: [
-      'all',
-      ...getUniqueStatuses(filteredLogData),
-      'car',
-      'public transport',
-    ],
+    statuses: ['all', ...getUniqueStatuses(filteredLogData)],
     status: 'all',
     weeks: ['all', ...getUniqueWeekNumbers(filteredLogData)],
     week: 'all',
@@ -36,11 +40,12 @@
   };
 
   function resetFilters() {
-    filters.routeFrom = 'no sorting';
-    filters.routeTo = 'no sorting';
+    filters.startingPoint = 'no sorting';
+    filters.destination = 'no sorting';
     filters.sortDate = 'no sorting';
     filters.sortTravelTime = 'no sorting';
     filters.status = 'all';
+    filters.meansOfTransport = 'all';
     filters.week = 'all';
     filters.year = 'all';
 
@@ -98,18 +103,26 @@
   </th>
   <th>
     <TableDropdown
+      label="Means of transport"
+      options={filters.statuses}
+      value={filters.status}
+      on:change={(event) => updateData(event, 'status')}
+    />
+  </th>
+  <th>
+    <TableDropdown
       label="From"
-      options={filters.routesFrom}
-      value={filters.routeFrom}
-      on:change={(event) => updateData(event, 'routeFrom')}
+      options={filters.startingPoint}
+      value={filters.startingPoint}
+      on:change={(event) => updateData(event, 'startingPoint')}
     />
   </th>
   <th>
     <TableDropdown
       label="To"
-      options={filters.routesTo}
-      value={filters.routeTo}
-      on:change={(event) => updateData(event, 'routeTo')}
+      options={filters.destination}
+      value={filters.destination}
+      on:change={(event) => updateData(event, 'destination')}
     />
   </th>
   <th>

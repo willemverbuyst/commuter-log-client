@@ -4,6 +4,11 @@
   import { getDay, getYear } from '../../helpers/dateLogic';
   import TableButton from '../Buttons/TableButton.svelte';
   import TableHeader from './TableHeader.svelte';
+  import {
+    MeansOfTransportDisplay,
+    StatusOfDay,
+    StatusOfDayDisplay,
+  } from '../../constants';
 
   export let logData;
 
@@ -26,32 +31,25 @@
         <tr>
           <td>{getYear(new Date(logDate.date))}</td>
           <td>{logDate.weekNumber}</td>
-          <td class="tc--align-right">{getDay(new Date(logDate.date))}</td>
-          {#if logDate.statusOfDay === 'day off'}
-            <td colspan="4" class="tc--day-off">day off</td>
-            <TableButton on:click={() => dispatch('edit', logDate.id)}
-              >Edit</TableButton
-            >
-          {:else if logDate.statusOfDay === 'working from home'}
-            <td colspan="4">working from home</td>
-            <TableButton on:click={() => dispatch('edit', logDate.id)}
-              >Edit</TableButton
+          <td class="table__container--align-right"
+            >{getDay(new Date(logDate.date))}</td
+          >
+          {#if logDate.statusOfDay === StatusOfDay.DAY_OFF || logDate.statusOfDay === StatusOfDay.WORKING_FROM_HOME}
+            <td colspan="5" class="table__container--day-off"
+              >{StatusOfDayDisplay[logDate.statusOfDay]}</td
             >
           {:else}
-            <td>{logDate.meansOfTransport}</td>
-            <td>{logDate.routeTripFrom}</td>
-            <td>{logDate.routeTripTo}</td>
-            {#if logDate.durationTrip}
-              <td class="tc--align-right"
-                >{formatDuration(logDate.durationTrip)}</td
-              >
-            {:else}
-              <td />
-            {/if}
-            <TableButton on:click={() => dispatch('edit', logDate.id)}
-              >Edit</TableButton
+            <td>{StatusOfDayDisplay[logDate.statusOfDay]}</td>
+            <td>{MeansOfTransportDisplay[logDate.meansOfTransport]}</td>
+            <td>{logDate.startingPoint}</td>
+            <td>{logDate.destination}</td>
+            <td class="table__container--align-right"
+              >{formatDuration(logDate.durationTrip)}</td
             >
           {/if}
+          <TableButton on:click={() => dispatch('edit', logDate.id)}
+            >Edit</TableButton
+          >
         </tr>
       {/each}
     </table>
@@ -80,7 +78,7 @@
       inset -0.5px -0.5px 0.5px var(--main-bg-color-dark);
   }
 
-  .tc--align-right {
+  .table__container--align-right {
     text-align: right;
   }
 

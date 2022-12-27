@@ -1,3 +1,4 @@
+import { StatusOfDay } from '../../constants';
 import { reduceDates } from '../utils';
 
 export const getAllWorkingDaysData = (logData) => {
@@ -5,11 +6,11 @@ export const getAllWorkingDaysData = (logData) => {
 
   // Use .flatMap for type safe filtering
   const withoutDayOff = reducedDates.flatMap((day) =>
-    day.statusOfDay !== 'DAY_OFF' ? [day] : []
+    day.statusOfDay !== StatusOfDay.DAY_OFF ? [day] : []
   );
 
   const travelTimes = withoutDayOff.map((day) =>
-    day.statusOfDay === 'WORKING_FROM_HOME' ? 0 : day.durationTrip
+    day.statusOfDay === StatusOfDay.WORKING_FROM_HOME ? 0 : day.durationTrip
   );
 
   const labels = withoutDayOff.map(() => '');

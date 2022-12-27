@@ -1,3 +1,4 @@
+import { StatusOfDay } from '../../constants';
 import { getWeekNumber } from '../dateLogic';
 import { groupByWeekNumber, reduceDates } from '../utils';
 
@@ -11,6 +12,13 @@ export const getAveragePerWeekData = (logData) => {
   const maxForDisplay = Math.max(...averages) * 1.2;
   const title = `AVERAGE TRAVEL TIMES PER WEEK`;
 
+  console.log('c', {
+    averages,
+    labels,
+    maxForDisplay,
+    title,
+  });
+
   return {
     averages,
     labels,
@@ -22,14 +30,16 @@ export const getAveragePerWeekData = (logData) => {
 export const getAveragePerWeek = (week) => {
   // Use .flatMap for type safe filtering
   const weekWithoutDayOff = week.flatMap((day) =>
-    day.statusOfDay !== 'day off' ? [day] : []
+    day.statusOfDay !== StatusOfDay.DAY_OFF ? [day] : []
   );
 
   const average =
     weekWithoutDayOff.length > 0
       ? weekWithoutDayOff
           .map((day) =>
-            day.statusOfDay === 'working from home' ? 0 : day.durationTrip
+            day.statusOfDay === StatusOfDay.WORKING_FROM_HOME
+              ? 0
+              : day.durationTrip
           )
           .reduce((a, b) => a + b) / weekWithoutDayOff.length
       : 0;
